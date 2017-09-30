@@ -1,0 +1,24 @@
+Zared:
+	Begin coding the GUI. Don't worry about connecting anything to the
+	database yet, just get everything in the correct place. Customers will
+	login using their email.
+
+	For each pizza, they'll be able to choose:
+	  1) The size of the pizza (small, medium, large)
+	  2) The type of crust
+	  3) The sauce to use as the base
+	  4) One or more cheeses
+	  5) Zero or more toppings
+
+	The total cost of the pizza will be determined based on cost of each
+	individual ingrediant. The Pizza class has a 'getCost' method which
+	computes this.
+
+Blake:
+	Begin coding other classes that we'll need. You can use the Dia diagram
+	to figure out the classes. It might help for you to build a table schema
+	first to figure out what properties to include in each class.
+
+Jake & Thomas:
+	Begin building some charts. You have full creative liberty on this one.
+	An inheritance chart would be nice to turn in with the final project.
