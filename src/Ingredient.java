@@ -24,19 +24,19 @@ public class Ingredient
 		this.large_cost = large_cost;
 	}
 
-	void setID(int id) { this.id = id; }
-	void setName(String name) { this.name = name; }
-	void setSmallCost(double small_cost) { this.small_cost = small_cost; }
-	void setMediumCost(double medium_cost) { this.medium_cost = medium_cost; }
-	void setLargeCost(double large_cost) { this.large_cost = large_cost; }
+	public void setID(int id) { this.id = id; }
+	public void setName(String name) { this.name = name; }
+	public void setSmallCost(double small_cost) { this.small_cost = small_cost; }
+	public void setMediumCost(double medium_cost) { this.medium_cost = medium_cost; }
+	public void setLargeCost(double large_cost) { this.large_cost = large_cost; }
 
-	int getID() { return id; }
-	String getName() { return name; }
-	double getSmallCost() { return small_cost; }
-	double getMediumCost() { return medium_cost; }
-	double getLargeCost() { return large_cost; }
+	public int getID() { return id; }
+	public String getName() { return name; }
+	public double getSmallCost() { return small_cost; }
+	public double getMediumCost() { return medium_cost; }
+	public double getLargeCost() { return large_cost; }
 
-	double getCost(Pizza.Size size)
+	public double getCost(Pizza.Size size)
 	{
 		switch (size) {
 		case SMALL:

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Pizza
 {
 	private int id;
+	private String name;
 	private Size size; 
 	private Crust crust;
 	private Sauce sauce;
@@ -17,10 +18,11 @@ public class Pizza
 
 	public Pizza()
 	{
-		this(0, Size.SMALL, null, null, null, null);
+		this(0, "", Size.SMALL, null, null, null, null);
 	}
 
 	public Pizza(int                id,
+	             String             name,
 	             Size               size,
 	             Crust              crust,
 	             Sauce              sauce,
@@ -28,43 +30,32 @@ public class Pizza
 	             ArrayList<Topping> toppings)
 	{
 		this.id = id;
+		this.name = name == null ? "" : name;
 		this.size = size;
 		this.crust = crust;
 		this.sauce = sauce;
 
 		this.cheeses = cheeses == null ? new ArrayList<Cheese>() : cheeses;
 		this.toppings = toppings == null ? new ArrayList<Topping>() : toppings;
-
-		/*
-		if (cheeses == null) {
-			this.cheeses = ArrayList<Cheese>();
-		} else {
-			this.cheeses = cheeses;
-		}
-
-		if (toppings == null) {
-			this.toppings = ArrayList<Topping>();
-		} else {
-			this.toppings = toppings;
-		}
-		*/
 	}
 
-	int getID() { return id; }
-	Size getSize() { return size; }
-	Crust getCrust() { return crust; }
-	Sauce getSauce() { return sauce; }
-	ArrayList<Cheese> getCheeses() { return cheeses; }
-	ArrayList<Topping> getToppings() { return toppings; }
+	public int getID() { return id; }
+	public String getName() { return name; }
+	public Size getSize() { return size; }
+	public Crust getCrust() { return crust; }
+	public Sauce getSauce() { return sauce; }
+	public ArrayList<Cheese> getCheeses() { return cheeses; }
+	public ArrayList<Topping> getToppings() { return toppings; }
 
-	void setID(int id) { this.id = id; }
-	void setSize(Size size) { this.size = size; }
-	void setCrust(Crust crust) { this.crust = crust; }
-	void setSauce(Sauce sauce) { this.sauce = sauce; }
-	void setCheeses(ArrayList<Cheese> cheeses) { this.cheeses = cheeses; }
-	void setToppings(ArrayList<Topping> toppings) { this.toppings = toppings; }
+	public void setID(int id) { this.id = id; }
+	public void setName(String name) { this.name = name; }
+	public void setSize(Size size) { this.size = size; }
+	public void setCrust(Crust crust) { this.crust = crust; }
+	public void setSauce(Sauce sauce) { this.sauce = sauce; }
+	public void setCheeses(ArrayList<Cheese> cheeses) { this.cheeses = cheeses; }
+	public void setToppings(ArrayList<Topping> toppings) { this.toppings = toppings; }
 
-	double getTotalCost()
+	public double getTotalCost()
 	{
 		double cost = 0.0;
 

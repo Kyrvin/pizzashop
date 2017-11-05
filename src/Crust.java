@@ -1,4 +1,5 @@
-public class Crust extends Ingredient
+public class Crust
+	extends Ingredient
 {
 	public Crust() { super(); }
 
