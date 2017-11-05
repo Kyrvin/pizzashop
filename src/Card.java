@@ -16,14 +16,14 @@ public class Card
 		DEBIT
 	}
 
-	private Card() { this(0, "", "", Type.UNKNOWN, "", null); }
+	public Card() { this(0, "", "", Type.UNKNOWN, "", null); }
 
-	private Card(int     id,
-	             String  number,
-	             String  name,
-	             Type    type,
-	             String  expiration_date,
-	             Address address)
+	public Card(int     id,
+	            String  number,
+	            String  name,
+	            Type    type,
+	            String  expiration_date,
+	            Address address)
 	{
 		this.id = id;
 		this.number = number;
