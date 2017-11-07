@@ -55,7 +55,7 @@ public class Pizza
 	public void setCheeses(ArrayList<Cheese> cheeses) { this.cheeses = cheeses; }
 	public void setToppings(ArrayList<Topping> toppings) { this.toppings = toppings; }
 
-	public double getTotalCost()
+	public double getCost()
 	{
 		double cost = 0.0;
 
