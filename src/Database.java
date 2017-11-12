@@ -1700,47 +1700,4 @@ public class Database
 			return new ArrayList<Order>();
 		}
 	}
-
-	public static void main(String[] args)
-	{
-		Crust thin_crust = new Crust(0, "Thin Crust", 0.0, 0.0, 1.0);
-		Crust reg_crust = new Crust(0, "Regular Crust", 0.0, 0.0, 1.0);
-
-		Sauce marinara = new Sauce(0, "Marinara", 0.0, 0.0, 1.0);
-		Sauce pesto = new Sauce(0, "Pesto", 0.0, 0.0, 1.0);
-
-		Cheese mozzarella = new Cheese(0, "Mozzarella", 0.0, 0.0, 1.0);
-		Cheese vegan = new Cheese(0, "Vegan", 0.0, 0.0, 1.0);
-
-		Topping spinach = new Topping(0, "Spinach", 0.0, 0.0, 1.0);
-		Topping tomatoes = new Topping(0, "Tomatoes", 0.0, 0.0, 1.0);
-		Topping onions = new Topping(0, "Onions", 0.0, 0.0, 1.0);
-		Topping mushrooms = new Topping(0, "Mushrooms", 0.0, 0.0, 1.0);
-
-		Pizza pizza = new Pizza();
-		pizza.setCrust(thin_crust);
-		pizza.setSauce(pesto);
-		pizza.getCheeses().add(vegan);
-		pizza.getToppings().add(spinach);
-		pizza.getToppings().add(tomatoes);
-		pizza.getToppings().add(onions);
-		pizza.getToppings().add(mushrooms);
-
-		Address address = new Address(0, "658 Bartow Drive", null, "Dacula", "Ga", "30019");
-		Card card = new Card(0, "1111-1111-1111-1111", "Kyrvin", Card.Type.DEBIT, "19/01", address);
-		Customer kyrvin = new Customer(0, "Kyrvin", "kyrvin3@gmail.com", "password", "(678) 123 - 1234", null, address, card);
-
-		ArrayList<OrderLine> order_lines = new ArrayList<OrderLine>();
-		order_lines.add(new OrderLine(pizza, Pizza.Size.LARGE, 1, 0.0));
-
-		Order order = new Order(0, kyrvin, address, card, new Date(), order_lines);
-
-		Database db = new Database("/home/kyrvin/School/swe3313/pizzashop/src/test.db");
-		db.open();
-
-		db.insertAddress(new Address(0, "658 Bartow Drive", null, "Dacula", "Ga", "30019"));
-		db.insertOrder(order);
-
-		db.close();
-	}
 }
