@@ -14,15 +14,17 @@ public class OrderLine
 		this.pizza = pizza;
 		this.size = size;
 		this.quantity = quantity;
+		this.unit_cost = 0.0;
 	}
 
 	public Pizza getPizza() { return pizza; }
 	public Pizza.Size getSize() { return size; }
 	public int getQuantity() { return quantity; }
+
 	public double getUnitCost()
 	{
 		if (unit_cost == 0.0) {
-			return pizza.getCost();
+			return pizza.getCost(size);
 		} else {
 			return unit_cost;
 		}

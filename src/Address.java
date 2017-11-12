@@ -1,3 +1,7 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLTimeoutException;
+
 public class Address
 {
 	private int id;
@@ -7,7 +11,19 @@ public class Address
 	private String state;
 	private String zip;
 
-	public Address() { this(0, "", "", "", "", ""); }
+	public Address() { this(0, "", null, "", "", ""); }
+
+	public Address(ResultSet rset)
+		throws SQLException,
+		       SQLTimeoutException
+	{
+		id = rset.getInt(1);
+		line1 = rset.getString(2);
+		line2 = rset.getString(3);
+		city = rset.getString(4);
+		state = rset.getString(5);
+		zip = rset.getString(6);
+	}
 
 	public Address(int id,
 	        String line1,

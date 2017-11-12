@@ -1,6 +1,17 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLTimeoutException;
+
 public class Sauce extends Ingredient
 {
 	public Sauce() { super(); }
+
+	public Sauce(ResultSet rset)
+		throws SQLException,
+		       SQLTimeoutException
+	{
+		super(rset);
+	}
 
 	public Sauce(int    id,
 	             String name,

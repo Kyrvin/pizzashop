@@ -1,3 +1,7 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLTimeoutException;
+
 public class Ingredient
 {
 	private int id;
@@ -9,6 +13,17 @@ public class Ingredient
 	protected Ingredient()
 	{
 		this(0, "", 0, 0, 0);
+	}
+
+	protected Ingredient(ResultSet rset)
+		throws SQLException,
+		       SQLTimeoutException
+	{
+		this.id = rset.getInt(1);
+		this.name = rset.getString(2);
+		this.small_cost = rset.getDouble(3);
+		this.medium_cost = rset.getDouble(4);
+		this.large_cost = rset.getDouble(5);
 	}
 
 	protected Ingredient(int    id,
@@ -54,5 +69,4 @@ public class Ingredient
 
 		return 0;
 	}
-
 }
